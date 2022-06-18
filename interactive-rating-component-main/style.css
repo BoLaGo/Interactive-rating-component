@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+  --primary-color: hsl(25, 97%, 53%);
+  --secondary-white-color: hsl(0, 0%, 100%);
+  --secondary-lightgray-color: hsl(217, 12%, 63%);
+  --secondary--mediumgray-color: hsl(216, 12%, 54%);
+  --secondary--darkblue-color: hsl(213, 19%, 18%);
+  --secondary-verydarkblue-color: hsl(216, 12%, 8%);
+}
+
+
+/* Reset & Overall styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Overpass', sans-serif;
+}
+
+/* Utility classes */
+.selected-button {
+  background-color: var(--secondary-lightgray-color) !important;
+  color: hsl(0, 0%, 100%) !important;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fadeOut .25s ease forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn .25s ease .2s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+#main .card .usable button {
+  width: 100%;
+  background-color: var(--primary-color) !important;
+  border: none;
+  border-radius: 2rem;
+  height: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: hsl(0, 0%, 100%) !important;
+  transition: all 2s ease;
+}
+
+/* Main styling - Review State */
+#main {
+  background-color: var(--secondary-verydarkblue-color);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#main .card {
+  width: 450px;
+  background-image: linear-gradient(to bottom left, hsl(208, 18%, 14%), hsl(215, 31%, 11%));
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  border-radius: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#main .card * {
+  margin: .5rem 0;
+}
+
+#main .card .review-star img {
+  margin: .1rem 0 .8rem 0;
+  background-color: hsla(215, 18%, 21%, 0.445);
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+#main .card .review-title h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--secondary-white-color);
+}
+
+#main .card .review-text p {
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--secondary-lightgray-color);
+  font-size: 1rem;
+}
+
+#main .card .review-score {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  margin: 1.5rem 0;
+}
+
+#main .card .review-score * {
+  background-color: hsla(215, 18%, 21%, 0.445);
+  padding: 1rem;
+  border-radius: 50%;
+  width: 14%;
+  text-align: center;
+  color: var(--secondary-lightgray-color);
+  font-weight: 700;
+  transition: all .1s ease-out;
+}
+
+#main .card .review-score *:hover {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: hsl(0, 0%, 100%);
+}
+
+#main .card .review-button-start button {
+  width: 100%;
+  background-color: var(--secondary--mediumgray-color);
+  border: none;
+  border-radius: 2rem;
+  height: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: hsla(0, 0%, 100%, 0.315);
+  transition: all .15s ease;
+}
+
+#main .card .review-button-start button:hover {
+  cursor: not-allowed;
+}
+
+#main .card .usable button:hover {
+  cursor: pointer;
+  background-color: var(--secondary-white-color) !important;
+  color: var(--primary-color) !important;
+}
+
+/* Main styling - Thank you State */
+#main .card-thanks {
+  width: 450px;
+  background-image: linear-gradient(to bottom left, hsl(208, 18%, 14%), hsl(215, 31%, 11%));
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2.75rem 2rem;
+  border-radius: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#main .card-thanks * {
+  margin: .3rem 0;
+}
+
+#main .card-thanks .thanks-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main .card-thanks .thanks-score p {
+  background-color: var(--secondary--darkblue-color);
+  padding: .5rem 1.5rem .3rem 1.5rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+
+#main .card-thanks .thanks-title h2 {
+  font-size: 1.6rem;
+  color: var(--secondary-white-color);
+  font-weight: 700;
+}
+
+#main .card-thanks .thanks-text p {
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--secondary-lightgray-color);
+  font-size: 1rem;
+  text-align: center;
+  margin: .8rem;
+}
